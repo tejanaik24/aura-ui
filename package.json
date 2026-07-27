@@ -12,7 +12,16 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "keywords": ["react", "components", "templates", "tailwind", "nextjs", "ai", "claude", "cursor"],
+  "keywords": [
+    "react",
+    "components",
+    "templates",
+    "tailwind",
+    "nextjs",
+    "ai",
+    "claude",
+    "cursor"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
@@ -20,8 +29,10 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
+    "gsap": "^3.15.0",
     "lucide-react": "^0.468.0",
-    "next": "15.1.3",
+    "next": "^15.5.22",
+    "puppeteer": "^25.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.0.2"
@@ -33,6 +44,7 @@
     "@types/react-dom": "^19.0.3",
     "eslint": "^9.17.0",
     "eslint-config-next": "15.1.3",
+    "playwright": "^1.62.0",
     "tailwindcss": "^4.1.4",
     "typescript": "^5.7.3"
   }

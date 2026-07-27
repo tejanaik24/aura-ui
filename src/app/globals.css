@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0A0A0A;
+  --color-foreground: #FFFFFF;
+  --color-primary: #7C3AED;
+  --color-primary-light: #8B5CF6;
+  --color-primary-dark: #6D28D9;
+  --color-muted: #27272A;
+  --color-muted-foreground: #A1A1AA;
+  --color-border: #27272A;
+  --color-surface: #111111;
+  --color-surface-hover: #1A1A1A;
+  --color-accent: #7C3AED;
+  --color-success: #22C55E;
+  --color-error: #EF4444;
+
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --animate-aurora: aurora 60s linear infinite;
+  --animate-grid-flow: grid-flow 20s linear infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes aurora {
+  from { background-position: 50% 50%, 50% 50%; }
+  to { background-position: 350% 50%, 350% 50%; }
+}
+
+@keyframes grid-flow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(60px); }
+}
+
+@keyframes shimmer {
+  from { background-position: 0 0; }
+  to { background-position: -200% 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Film grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3F3F46;
+}
+
+/* Selection */
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: #FFFFFF;
+}
